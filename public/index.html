@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I love sylphy</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="slotWrap">
+  <div class="option no1 active"><span>1</span></div>
+  <div class="option no2"><span>2</span></div>
+  <div class="option no3"><span>3</span></div>
+  <div class="option no4"><span>4</span></div>
+  <div class="option no5"><span>5</span></div>
+  <div class="option no6"><span>6</span></div>
+  <div class="option no7"><span>7</span></div>
+  <div class="option no8"><span>8</span></div>
+  <div class="option no9"><span>9</span></div>
+  <div class="option no10"><span>10</span></div>
+  <span class="clear"></span>
+</div>
+
+<div class="button-group">
+  <button id="start-draw" class="start-button">立即抽獎</button>
+  <button id="add-option">新增選項</button>
+  <button id="remove-option">刪除選項</button>
+  <button id="createRoom">創建房間</button>
+  <button id="joinRoom">加入房間</button>
+  <div id="roomIdDisplay" class="room-id-display" style="display: none;">房號：</div>
+</div>
+
+<div id="roomIdContainer" style="display: none;">
+  <input type="text" id="roomId" placeholder="輸入房間 ID">
+  <button id="joinRoomConfirm">確認加入</button>
+</div>
+
+<div class="popup-wrap" id="letmeopen" style="display: none;">
+  <div class="popup-box transform-out">
+    <h2 id="winPrizes"></h2>
+    <h3>恭喜中獎!</h3>
+    <a class="close-btn popup-close" href="#">OK</a>
+  </div>
+</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>

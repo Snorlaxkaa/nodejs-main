@@ -1,0 +1,236 @@
+body {
+  letter-spacing: 1px;
+  overflow: hidden; /* 防止滾動條 */
+  background: url('bg.png') no-repeat center center fixed; /* 背景圖片 */
+  background-size: cover; /* 使圖片覆蓋整個視窗 */
+}
+.clear {
+  clear: both;
+  display: block;
+}
+.slotWrap {
+  position: absolute; /* 覆蓋整個視窗 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.slotWrap .option {
+  position: absolute; /* 絕對定位 */
+  width: 198px;
+  height: 92px;
+  margin: 0;
+  background: #f8bbd0; /* 淡粉色 */
+  color: #c2185b; /* 淡粉色 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 2px 0 2px #f48fb1; /* 淡粉色 */
+  transition: background 0.5s;
+}
+.slotWrap .option.active {
+  color: transparent; /* 文字隱藏 */
+  background: url('Cover-removebg-preview.png') no-repeat center center; /* 替換為圖片的路徑 */
+  background-size: cover;
+  box-shadow: 0 0 10px #ec407a; /* 淡粉色 */
+}
+.slotWrap .option.active span {
+  visibility: hidden; /* 隱藏文字 */
+}
+
+button {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  width: 150px;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #81d4fa; /* 淡藍色 */
+  box-shadow: 0 2px 0 2px #4fc3f7; /* 淡藍色 */
+  color: #fff;
+  cursor: pointer;
+  margin: 0 10px; /* 間距設置 */
+}
+button:active {
+  margin-top: 8px;
+  box-shadow: 0 -2px 0 2px #4fc3f7; /* 淡藍色 */
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+#start-draw {
+  width: 150px; /* 調整大小 */
+}
+
+#add-option, #remove-option, #createRoom, #joinRoom, #joinRoomConfirm {
+  width: 150px; /* 調整大小 */
+}
+
+#add-option:active, #remove-option:active, #createRoom:active, #joinRoom:active, #joinRoomConfirm:active {
+  margin-top: 8px;
+  box-shadow: 0 -2px 0 2px #4fc3f7; /* 淡藍色 */
+}
+
+#roomIdContainer {
+  position: absolute;
+  bottom: 100px; /* 可以根据需要调整位置 */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#roomId {
+  width: 200px;
+  height: 50px;
+  border: 2px solid #81d4fa;
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+#joinRoomConfirm {
+  width: 150px; /* 调整大小 */
+}
+
+/* 彈窗 */
+.popup-wrap {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  content: '';
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.popup-box {
+  width: 50%;
+  padding: 75px 75px 200px;
+  transform: translate(-50%, -50%) scale(0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  background: #b3e5fc; /* 淡藍色 */
+  box-shadow: 0 0 10px #4fc3f7; /* 淡藍色 */
+}
+h2 {
+  font-size: 48px;
+  font-weight: normal;
+  color:#f48fb1; /* 淡粉色 */
+}
+
+h3 {
+  font-size: 40px;
+  background: #f8bbd0; /* 淡粉色 */
+  color: #c2185b; /* 淡粉色 */
+  margin-left:-95px;
+  margin-right:-95px;
+  padding-top:20px;
+  padding-bottom:20px;
+  position: relative;
+}
+h3:before{
+  content:"";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0px 20px 20px;
+  border-color: transparent transparent #b3e5fc transparent; /* 淡藍色 */
+}
+h3:after{
+  content:"";
+  position: absolute;
+  top: -20px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 0 0px 20px;
+  border-color: transparent transparent transparent #b3e5fc; /* 淡藍色 */
+}
+p{
+  font-size: 24px;
+  color:#f48fb1; /* 淡粉色 */
+  text-align: left;
+}
+.close-btn {
+  display: inline-block;
+  position: absolute;
+  bottom:40px;
+  transform: translateX(-50%);
+  width:80%;
+  border-radius: 40px;
+  border:1px solid #f48fb1; /* 淡粉色 */
+  font-weight: bold;
+  text-decoration: none;
+  color: #f48fb1; /* 淡粉色 */
+  line-height: 80px;
+  font-size: 32px;
+  transition:.5s;
+}
+.close-btn:hover{
+  background:#81d4fa; /* 淡藍色 */
+  color:#fff;
+}
+.transform-in, .transform-out {
+  display: block;
+  transition: all ease 0.5s;
+}
+
+.transform-in {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.transform-out {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#roomIdDisplay {
+  font-size: 1.2em;
+  color: #333;
+  margin-left: 10px;
+}
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.room-id-display {
+  font-size: 1.2em;
+  color: #000;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
